@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latihan TKA Bahasa Indonesia</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f6f2;--card:#fff;--tx:#1f2328;--mu:#666;--bd:#ddd;--ac:#c0392b;--ok:#1e8449;--okb:#e6f4ea;--no:#b03a2e;--nob:#fdecea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#181a1b;--card:#242628;--tx:#eee;--mu:#aaa;--bd:#3a3d40;--ac:#e57366;--ok:#58d68d;--okb:#1d3a29;--no:#f1948a;--nob:#3f2422}}
+:root[data-theme="dark"]{--bg:#181a1b;--card:#242628;--tx:#eee;--mu:#aaa;--bd:#3a3d40;--ac:#e57366;--ok:#58d68d;--okb:#1d3a29;--no:#f1948a;--nob:#3f2422}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1{font-size:1.4rem;margin:.2em 0}h2{font-size:1.1rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0}
+.pass{border-left:4px solid var(--ac);font-size:.95rem;white-space:pre-line}
+button{font:inherit;cursor:pointer;color:var(--tx)}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;margin:8px 0}
+.opt.sel{border-color:var(--ac);outline:2px solid var(--ac)}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 18px;margin:4px 6px 4px 0}
+.btn:disabled{opacity:.4;cursor:default}.btn.g{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+.bar{height:6px;background:var(--bd);border-radius:3px}.bar i{display:block;height:100%;background:var(--ac);border-radius:3px}
+.mu{color:var(--mu);font-size:.9rem}.tag{font-size:.75rem;color:var(--mu);text-transform:uppercase;letter-spacing:.05em}
+.rv{border-radius:10px;padding:12px;margin:10px 0;border:1px solid}.rv.ok{background:var(--okb);border-color:var(--ok)}.rv.no{background:var(--nob);border-color:var(--no)}
+.big{font-size:2.6rem;font-weight:700}ul{padding-left:1.2em;margin:.4em 0}
+</style></head><body><main id="app"></main>
+<script>
+const S=[
+{m:"BI",p:"Indonesia menghasilkan sekitar 68 juta ton sampah per tahun, dan hampir 20 persennya adalah plastik. Sebagian besar sampah plastik berakhir di tempat pembuangan akhir karena belum dipilah dari rumah. Pemerintah mendorong bank sampah agar warga mau memilah. Namun, tanpa kebiasaan memilah sejak dari rumah, program tersebut sulit berjalan efektif.",qs:[
+["Berdasarkan teks, berapa perkiraan persentase sampah plastik di Indonesia?",["10 persen","Hampir 20 persen","50 persen","68 persen"],1,"Teks menyebut hampir 20 persen. Angka 68 juta adalah total sampah (ton), bukan persentase."],
+["Simpulan yang paling tepat dari teks adalah ...",["Bank sampah tidak diperlukan lagi","Keberhasilan bank sampah bergantung pada kebiasaan warga memilah sampah","Pemerintah gagal mengelola sampah","Plastik tidak dapat didaur ulang"],1,"Kalimat terakhir menegaskan program sulit efektif tanpa kebiasaan memilah dari rumah (informasi tersirat)."],
+["Makna kata 'efektif' pada teks adalah ...",["Murah","Cepat","Berhasil guna","Mudah"],2,"Efektif = berhasil guna / membawa hasil."],
+["Kata 'Namun' pada teks menyatakan hubungan ...",["Sebab-akibat","Pertentangan","Urutan waktu","Tujuan"],1,"'Namun' adalah konjungsi antarkalimat yang menyatakan pertentangan."]]},
+{m:"BI",qs:[
+["Kalimat efektif terdapat pada ...",["Para siswa-siswa itu mengerjakan tugas.","Para siswa itu mengerjakan tugas dengan tekun.","Siswa-siswa itu mereka mengerjakan tugas.","Para siswa itu semuanya sama-sama mengerjakan tugas."],1,"'Para' sudah menyatakan jamak (A pleonasme), C bersubjek ganda, D boros kata."],
+["Kata baku yang tepat adalah ...",["Analisa","Praktek","Analisis","Resiko"],2,"Bentuk baku: analisis, praktik, risiko."],
+["'Hujan deras mengguyur kota sejak subuh. ..., sebagian ruas jalan tergenang dan lalu lintas macet.' Konjungsi yang tepat untuk mengisi titik-titik adalah ...",["Akibatnya","Sebaliknya","Misalnya","Meskipun begitu"],0,"Hubungan antarkalimatnya sebab-akibat sehingga yang tepat 'Akibatnya'."]]},
+{m:"BI",p:"Sudah tiga malam Rani duduk di dermaga, menghitung lampu perahu yang pulang. Ayahnya belum kembali. Ombak menepuk-nepuk tiang kayu seperti mengetuk, meminta ia berhenti berharap. Rani menggenggam jaket ayahnya lebih erat, menolak beranjak.",qs:[
+["Suasana yang tergambar dalam kutipan cerita tersebut adalah ...",["Riang","Cemas dan penuh harap","Marah","Bosan"],1,"Menunggu tiga malam dan menolak beranjak menunjukkan cemas sekaligus berharap."],
+["Watak Rani yang tampak dalam kutipan adalah ...",["Gigih dan setia menunggu","Pemalas","Penakut","Sombong"],0,"Ia bertahan menunggu meski ombak 'meminta berhenti berharap'."],
+["Sudut pandang yang digunakan dalam kutipan adalah ...",["Orang pertama pelaku utama","Orang ketiga serba tahu","Orang pertama pelaku sampingan","Orang kedua"],1,"Memakai 'Rani/ia' dan narator mengetahui perasaan dan maksud ombak: orang ketiga serba tahu."]]},
+{m:"BL",p:"Teks 1: Belajar daring memberi siswa keleluasaan waktu. Rekaman pelajaran dapat diputar ulang kapan pun, sehingga siswa yang lambat memahami materi tidak tertinggal. Karena itu, belajar daring sebaiknya menjadi metode utama di semua sekolah.\n\nTeks 2: Survei terhadap 500 siswa SMA menunjukkan 62 persen mudah teralihkan oleh notifikasi gawai saat belajar daring. Akibatnya, waktu fokus mereka rata-rata hanya 15 menit. Karena itu, belajar daring perlu dibatasi dan didampingi guru.",qs:[
+["Perbedaan utama sudut pandang kedua teks adalah ...",["Teks 1 menyoroti keleluasaan waktu, Teks 2 menyoroti gangguan fokus","Teks 1 menolak belajar daring, Teks 2 mendukungnya","Teks 1 memakai data survei, Teks 2 tidak","Keduanya menuntut belajar daring dihapus"],0,"Teks 1 menonjolkan keunggulan (fleksibilitas), Teks 2 menonjolkan kelemahan (fokus terganggu)."],
+["Kalimat yang merupakan opini penulis pada Teks 1 adalah ...",["Rekaman pelajaran dapat diputar ulang kapan pun.","Belajar daring memberi siswa keleluasaan waktu.","Belajar daring sebaiknya menjadi metode utama di semua sekolah.","Siswa yang lambat tidak tertinggal."],2,"Kata 'sebaiknya' menandai pendapat/saran, bukan fakta yang dapat dibuktikan."],
+["Kelemahan argumen pada Teks 1 dibandingkan Teks 2 adalah ...",["Tidak menyebut manfaat","Tidak didukung data atau bukti empiris","Terlalu banyak angka","Menggunakan bahasa tidak baku"],1,"Teks 2 memakai data survei (500 siswa, 62 persen), sedangkan Teks 1 hanya berupa klaim."],
+["Data yang paling memperkuat argumen Teks 1 adalah ...",["Sebagian besar siswa memiliki gawai","Nilai siswa lambat memahami materi naik setelah mengulang rekaman pelajaran","Belajar tatap muka lebih mahal","Guru lebih senang mengajar daring"],1,"Data harus langsung membuktikan klaim: mengulang rekaman membantu siswa yang lambat."],
+["Awalan ter- pada kata 'teralihkan' bermakna ...",["Dilakukan dengan sengaja","Tanpa disengaja","Paling","Sedang"],1,"'Teralihkan' = fokus berpindah tanpa disengaja karena notifikasi."]]},
+{m:"BL",p:"Kota itu menelan orang-orang sedikit demi sedikit. Setiap pagi, Sarman menitipkan wajahnya di loker stasiun bersama tas kerjanya, lalu mengambilnya kembali menjelang malam. Belakangan, wajah yang ia ambil terasa asing. Ia berdiri lama di depan loker itu, tak yakin apakah wajah itu miliknya.",qs:[
+["Makna ungkapan 'menitipkan wajahnya' adalah ...",["Sarman lupa membawa barang","Sarman menyembunyikan jati dirinya demi tuntutan pekerjaan","Sarman takut dicuri","Sarman menyewa loker"],1,"Ungkapan metaforis: 'wajah' = jati diri yang ia tanggalkan selama bekerja."],
+["'Kota itu menelan orang-orang' termasuk majas ...",["Hiperbola","Personifikasi","Ironi","Litotes"],1,"Kota (benda mati) diberi sifat manusia/makhluk hidup: menelan."],
+["Konflik utama dalam kutipan cerita adalah ...",["Sarman melawan atasannya","Sarman melawan alam","Konflik batin Sarman tentang jati dirinya","Sarman melawan petugas stasiun"],2,"Ia ragu apakah wajah itu miliknya: konflik batin/krisis identitas."],
+["Penyelesaian cerita pada kutipan tersebut bersifat ...",["Tertutup, Sarman menemukan jati dirinya","Terbuka, tidak jelas apakah jati dirinya pulih","Tragis, Sarman meninggal","Bahagia, Sarman berhenti bekerja"],1,"Cerita berhenti pada keraguan Sarman tanpa kepastian: penyelesaian terbuka."],
+["Pesan yang paling relevan dengan kehidupan masa kini dari kutipan tersebut adalah ...",["Kehidupan kota menjamin kebahagiaan","Rutinitas dan tuntutan kota dapat mengikis jati diri seseorang","Loker stasiun aman untuk menyimpan barang","Bekerja keras tidak ada gunanya"],1,"Tema kisah: keterasingan dan hilangnya jati diri di tengah rutinitas urban."]]},
+{m:"BI",p:"Literasi digital bukan sekadar kemampuan mengoperasikan gawai. Ia mencakup kecakapan menyaring informasi, memeriksa kebenaran berita, dan menjaga etika bermedia. Sebuah survei nasional menemukan bahwa banyak pengguna internet membagikan berita tanpa membaca isinya. Kebiasaan ini mempercepat penyebaran hoaks.",qs:[
+["Menurut teks, literasi digital mencakup hal berikut, kecuali ...",["Menyaring informasi","Memeriksa kebenaran berita","Menjaga etika bermedia","Merakit perangkat keras"],3,"Merakit perangkat keras tidak disebut dalam teks."],
+["Kebiasaan yang mempercepat penyebaran hoaks menurut teks adalah ...",["Membaca berita terlalu lama","Membagikan berita tanpa membaca isinya","Mematikan gawai","Menulis berita sendiri"],1,"Informasi tersurat pada kalimat ketiga dan keempat."],
+["Gagasan utama teks tersebut adalah ...",["Hoaks selalu berasal dari survei","Literasi digital lebih dari sekadar mengoperasikan gawai","Gawai berbahaya bagi anak","Etika bermedia sudah dikuasai semua orang"],1,"Kalimat pertama memuat gagasan utama; kalimat lain menjelaskannya."],
+["Simpulan tersirat yang paling tepat adalah ...",["Internet perlu dilarang","Pengguna perlu terbiasa memeriksa berita sebelum membagikannya","Semua berita adalah hoaks","Survei tidak dapat dipercaya"],1,"Karena berbagi tanpa membaca mempercepat hoaks, solusinya adalah membiasakan verifikasi."],
+["Makna kata 'menyaring' pada teks adalah ...",["Memilah","Menyimpan","Menghapus semua","Menyebarkan"],0,"Menyaring informasi = memilah mana yang layak dipercaya."]]},
+{m:"BI",qs:[
+["Kalimat majemuk bertingkat terdapat pada ...",["Ayah membaca koran dan ibu memasak.","Karena hujan turun, pertandingan ditunda.","Ia membeli buku.","Adik tidur, kakak belajar."],1,"'Karena hujan turun' adalah anak kalimat yang bergantung pada induk kalimat."],
+["Penulisan huruf kapital yang benar adalah ...",["Ia berlibur ke Pulau bali.","Ia berlibur ke pulau Bali.","Ia berlibur ke Pulau Bali.","Ia berlibur ke pulau bali."],2,"Unsur geografi diikuti nama diri ditulis kapital: Pulau Bali."],
+["Makna konotatif 'kambing hitam' adalah ...",["Hewan berbulu hitam","Pihak yang dipersalahkan","Orang yang pemalu","Barang antik"],1,"Kambing hitam = pihak yang disalahkan atas suatu kesalahan."],
+["Penulisan berimbuhan yang tepat adalah ...",["Merubah","Mengubah","Mengrubah","Meruba"],1,"Kata dasar 'ubah' menjadi 'mengubah'."],
+["Penggunaan tanda baca yang tepat terdapat pada ...",["Ibu membeli apel jeruk, dan mangga.","Ibu membeli apel, jeruk, dan mangga.","Ibu, membeli apel jeruk dan mangga.","Ibu membeli, apel, jeruk dan, mangga."],1,"Rincian dipisahkan koma sebelum kata 'dan' terakhir."]]},
+{m:"BI",p:"Pagi itu, Pak Darto mendapati bayangannya menolak mengikutinya ke kantor. \"Aku libur,\" kata bayangan itu dari bawah kasur. Pak Darto pun berangkat tanpa bayangan, dan anehnya tak seorang pun menyadarinya.",qs:[
+["Cerita tersebut tergolong fiksi absurd karena ...",["Menceritakan kisah nyata","Memuat kejadian yang tidak masuk akal","Berlatar di kantor","Memiliki tokoh utama laki-laki"],1,"Bayangan yang bisa berbicara dan libur tidak logis."],
+["Sudut pandang yang digunakan adalah ...",["Orang pertama","Orang kedua","Orang ketiga","Campuran"],2,"Menggunakan nama 'Pak Darto' dan 'nya'."],
+["Kalimat 'tak seorang pun menyadarinya' menyiratkan bahwa ...",["Semua orang mengenal Pak Darto","Kehadiran Pak Darto kurang diperhatikan orang lain","Bayangan tidak penting","Kantor sangat gelap"],1,"Sindiran bahwa manusia sering luput diperhatikan."],
+["Latar tempat dalam kutipan adalah ...",["Kamar dan kantor","Hutan","Sekolah","Pasar"],0,"Disebut kasur (kamar) dan kantor."],
+["Sifat bayangan dalam cerita adalah ...",["Berani menyatakan keinginan","Penakut","Serakah","Pendendam"],0,"Ia terang-terangan menyatakan 'Aku libur'."]]},
+{m:"BL",p:"Teks 1: Kendaraan listrik tidak menghasilkan emisi gas buang sehingga dinilai menurunkan polusi udara perkotaan. Pemerintah pun menawarkan insentif pajak bagi pembelinya.\n\nTeks 2: Sebagian besar listrik di Indonesia masih dibangkitkan dari batu bara. Oleh sebab itu, emisi kendaraan listrik hanya berpindah dari knalpot ke cerobong pembangkit, dan manfaat lingkungannya belum optimal.",qs:[
+["Hubungan antara Teks 2 dan Teks 1 adalah ...",["Teks 2 mengulang Teks 1","Teks 2 menunjukkan keterbatasan klaim Teks 1","Teks 2 menolak insentif pajak","Teks 2 mendukung penuh Teks 1"],1,"Teks 2 mempertanyakan manfaat lingkungan yang diklaim Teks 1."],
+["Pernyataan yang merupakan fakta pada Teks 2 adalah ...",["Manfaat lingkungannya belum optimal","Sebagian besar listrik dibangkitkan dari batu bara","Kendaraan listrik buruk","Insentif harus dihapus"],1,"Dapat diverifikasi dengan data bauran energi; sisanya penilaian."],
+["Asumsi yang mendasari argumen Teks 2 adalah ...",["Manfaat lingkungan kendaraan listrik bergantung pada sumber listriknya","Batu bara murah","Knalpot tidak berbahaya","Pemerintah tidak peduli"],0,"Argumen menganggap emisi tetap terjadi selama listrik berasal dari batu bara."],
+["Kebijakan yang menjawab kedua teks sekaligus adalah ...",["Melarang kendaraan listrik","Memberi insentif sambil memperbanyak listrik dari energi terbarukan","Menaikkan pajak kendaraan listrik","Menambah pembangkit batu bara"],1,"Mempertahankan insentif (Teks 1) dan mengatasi sumber listrik (Teks 2)."],
+["Ungkapan 'berpindah dari knalpot ke cerobong' bermakna ...",["Kendaraan listrik memiliki cerobong","Masalah emisi tidak hilang, hanya berpindah tempat","Knalpot lebih bersih dari cerobong","Emisi sudah nol"],1,"Bahasa kias: sumber emisi bergeser dari jalan ke pembangkit."]]},
+{m:"BL",p:"Ibu selalu menyimpan satu kursi kosong di meja makan. Tak seorang pun boleh menempatinya, bahkan ketika tamu datang dan ruang terasa sesak. Aku baru mengerti bertahun-tahun kemudian, ketika kudapati Ibu mengusap sandaran kursi itu setiap fajar, seolah menyapa seseorang yang lebih dulu bangun daripada kami.",qs:[
+["Sudut pandang cerita tersebut adalah ...",["Orang pertama","Orang ketiga serba tahu","Orang ketiga terbatas","Orang kedua"],0,"Narator memakai kata 'aku'."],
+["Kursi kosong dalam cerita melambangkan ...",["Kekurangan perabot","Kerinduan pada sosok yang telah tiada","Kemiskinan","Keserakahan"],1,"Ibu menyapa 'seseorang yang lebih dulu bangun' – sosok yang hilang."],
+["Alur cerita tersebut adalah ...",["Maju","Mundur","Campuran","Tidak beralur"],2,"Ada peristiwa masa lalu dan pengertian yang datang 'bertahun-tahun kemudian'."],
+["Suasana yang dominan dalam kutipan adalah ...",["Riuh","Haru dan sunyi","Menegangkan","Jenaka"],1,"Ritual Ibu mengusap kursi menghadirkan suasana haru dan sunyi."],
+["Konflik yang paling tampak dalam kutipan adalah ...",["Konflik batin Ibu yang belum merelakan kehilangan","Pertengkaran dengan tamu","Perselisihan tetangga","Perlawanan pada alam"],0,"Tindakan Ibu menunjukkan pergulatan batin karena rindu."]]},
+{m:"BL",p:"Sebagian orang berpendapat bahwa pekerjaan rumah (PR) perlu dihapus karena membebani siswa. Padahal, PR yang dirancang baik melatih kemandirian dan mengulang materi. Masalahnya bukan pada adanya PR, melainkan pada jumlah dan kualitasnya.",qs:[
+["Pendapat inti penulis adalah ...",["PR harus dihapus","PR bermanfaat jika jumlah dan kualitasnya tepat","PR selalu membebani","Siswa tidak perlu belajar mandiri"],1,"Kalimat terakhir menyatakan sikap penulis."],
+["Kata 'Padahal' berfungsi sebagai ...",["Penambah informasi","Penanda sanggahan","Penanda urutan","Penanda contoh"],1,"Penulis menyanggah pendapat kelompok yang ingin menghapus PR."],
+["Pernyataan yang paling melemahkan argumen penulis adalah ...",["Penelitian menunjukkan PR tidak meningkatkan kemandirian siswa","Sebagian guru memberi PR tiap hari","Siswa mengerjakan PR di rumah","PR sudah ada sejak lama"],0,"Argumen penulis bertumpu pada manfaat kemandirian; bukti sebaliknya melemahkannya."],
+["Ikhtisar yang paling tepat adalah ...",["PR dihapus karena membebani","Penulis menolak penghapusan PR dan menekankan perbaikan jumlah serta kualitasnya","Penulis setuju semua PR","Penulis membahas sejarah PR"],1,"Ikhtisar memuat posisi dan alasan utama secara ringkas."],
+["Tanggapan yang paling tepat dan santun terhadap teks adalah ...",["Penulis pasti salah.","Saya setuju kualitas PR penting, tetapi manfaat kemandirian perlu dibuktikan dengan data.","Teks ini tidak berguna.","PR harus tetap ada tanpa alasan."],1,"Menanggapi dengan menghargai gagasan sekaligus mengkritisi bukti."]]}];
+const M={BI:["Bahasa Indonesia","Pemahaman teks informasi dan fiksi (tersurat, tersirat, evaluasi), kosakata, kalimat efektif dan kompleks, serta wacana (konjungsi antarkalimat)."],BL:["Bahasa Indonesia Tingkat Lanjut","Teks informasi tunggal/jamak (membandingkan sudut pandang, fakta vs opini, menilai argumen) dan teks fiksi metaforis (majas, konflik, penyelesaian terbuka, apresiasi)."]};
+let Q=[],i=0,A=[];const $=document.getElementById("app");
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function build(k){Q=[];S.forEach(s=>{if(k==="ALL"||s.m===k)s.qs.forEach(q=>Q.push({p:s.p,m:s.m,q:q[0],o:q[1],a:q[2],e:q[3]}))});A=Q.map(()=>null);i=0;quiz()}
+function home(){$.innerHTML=`<h1>Latihan TKA Bahasa Indonesia</h1><p class="mu">Pilih paket soal. Skor dan pembahasan muncul di akhir.</p>
+<div class="card"><h2>Ringkasan materi</h2><b>${M.BI[0]}</b><p class="mu">${M.BI[1]}</p><b>${M.BL[0]}</b><p class="mu">${M.BL[1]}</p><p class="mu">Fokus TKA: literasi membaca dan bernalar, bukan hafalan kaidah.</p></div>
+<button class="btn" onclick="build('BI')">Bahasa Indonesia (${n('BI')} soal)</button><button class="btn" onclick="build('BL')">BI Tingkat Lanjut (${n('BL')} soal)</button><button class="btn g" onclick="build('ALL')">Semua (${n('ALL')} soal)</button>`}
+function n(k){return S.filter(s=>k==="ALL"||s.m===k).reduce((a,s)=>a+s.qs.length,0)}
+function quiz(){const q=Q[i];$.innerHTML=`<div class="tag">${M[q.m][0]} · Soal ${i+1}/${Q.length}</div><div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
+${q.p?`<div class="card pass">${esc(q.p)}</div>`:""}<div class="card"><b>${esc(q.q)}</b>${q.o.map((o,j)=>`<button class="opt ${A[i]===j?"sel":""}" onclick="A[i]=${j};quiz()">${"ABCD"[j]}. ${esc(o)}</button>`).join("")}</div>
+<button class="btn g" ${i?"":"disabled"} onclick="i--;quiz()">Kembali</button><button class="btn" ${A[i]===null?"disabled":""} onclick="${i<Q.length-1?"i++;quiz()":"done()"}">${i<Q.length-1?"Lanjut":"Selesai"}</button>`;scrollTo(0,0)}
+function done(){const ok=Q.filter((q,j)=>A[j]===q.a).length;
+$.innerHTML=`<h1>Hasil latihan</h1><div class="card"><div class="big">${Math.round(ok/Q.length*100)}</div><p>Benar: <b>${ok}</b> · Salah: <b>${Q.length-ok}</b> dari ${Q.length} soal</p></div><h2>Pembahasan</h2>`+
+Q.map((q,j)=>{const g=A[j]===q.a;return `<div class="rv ${g?"ok":"no"}"><b>${g?"✔ Benar":"✘ Salah"}</b> · Soal ${j+1}<br>${esc(q.q)}<br>${g?"":`<span>Jawabanmu: ${"ABCD"[A[j]]}. ${esc(q.o[A[j]])}</span><br>`}<span>Jawaban benar: <b>${"ABCD"[q.a]}. ${esc(q.o[q.a])}</b></span><br><span class="mu">${esc(q.e)}</span></div>`}).join("")+
+`<button class="btn" onclick="home()">Latihan lagi</button>`;scrollTo(0,0)}
+home();
+</script></body></html>
